@@ -9,7 +9,7 @@ source:
   sha256: c7287b86780befa0914f2eeb8be2ac83e672ebd4bd16dc5574a36a59d9708303
   patches:
     - usecmake.patch  # [unix]
-    - define_bytswap.patch
+    - define_byteswap.patch
 
 build:
   number: 3
