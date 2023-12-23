@@ -11,6 +11,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - usecmake.patch  # [unix]
+    - define_bytswap.patch
 
 build:
   number: 3
