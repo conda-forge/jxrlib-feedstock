@@ -1,16 +1,16 @@
-cl /c /DWIN32 /Iimage\sys /Iimage\x86 /Icommon\include /Ijxrgluelib /Ijxrtestlib image\encode\encode.c image\encode\segenc.c image\encode\strenc.c image\encode\strFwdTransform.c image\encode\strPredQuantEnc.c image\decode\decode.c image\decode\postprocess.c image\decode\segdec.c image\decode\strdec.c image\decode\strInvTransform.c image\decode\strPredQuantDec.c image\decode\JXRTranscode.c image\sys\adapthuff.c image\sys\image.c image\sys\strcodec.c image\sys\strPredQuant.c image\sys\strTransform.c image\sys\perfTimerANSI.c
+cl /c /DWIN32 /DDISABLE_PERF_MEASUREMENT /DENABLE_OPTIMIZATIONS /Iimage\sys /Iimage\x86 /Icommon\include /Ijxrgluelib /Ijxrtestlib image\encode\encode.c image\encode\segenc.c image\encode\strenc.c image\encode\strFwdTransform.c image\encode\strPredQuantEnc.c image\decode\decode.c image\decode\postprocess.c image\decode\segdec.c image\decode\strdec.c image\decode\strInvTransform.c image\decode\strPredQuantDec.c image\decode\JXRTranscode.c image\sys\adapthuff.c image\sys\image.c image\sys\strcodec.c image\sys\strPredQuant.c image\sys\strTransform.c image\sys\perfTimerANSI.c
 
 lib *.obj /out:libjpegxr.lib
 del *.obj
 
-cl /c /DWIN32 /Iimage\sys /Iimage\x86 /Icommon\include /Ijxrgluelib /Ijxrtestlib jxrgluelib\JXRGlue.c jxrgluelib\JXRMeta.c jxrgluelib\JXRGluePFC.c jxrgluelib\JXRGlueJxr.c jxrtestlib\JXRTest.c jxrtestlib\JXRTestBmp.c jxrtestlib\JXRTestHdr.c jxrtestlib\JXRTestPnm.c jxrtestlib\JXRTestTif.c jxrtestlib\JXRTestYUV.c
+cl /c /DWIN32 /DDISABLE_PERF_MEASUREMENT /DENABLE_OPTIMIZATIONS /Iimage\sys /Iimage\x86 /Icommon\include /Ijxrgluelib /Ijxrtestlib jxrgluelib\JXRGlue.c jxrgluelib\JXRMeta.c jxrgluelib\JXRGluePFC.c jxrgluelib\JXRGlueJxr.c jxrtestlib\JXRTest.c jxrtestlib\JXRTestBmp.c jxrtestlib\JXRTestHdr.c jxrtestlib\JXRTestPnm.c jxrtestlib\JXRTestTif.c jxrtestlib\JXRTestYUV.c
 
 
 lib *.obj /out:libjxrglue.lib
 del *.obj
 
-cl /DWIN32 /Iimage\sys /Iimage\x86 /Icommon\include /Ijxrgluelib /Ijxrtestlib jxrencoderdecoder\JxrEncApp.c libjpegxr.lib libjxrglue.lib /OUT:JxrEncApp.exe
-cl /DWIN32 /Iimage\sys /Iimage\x86 /Icommon\include /Ijxrgluelib /Ijxrtestlib jxrencoderdecoder\JxrDecApp.c libjpegxr.lib libjxrglue.lib /OUT:JxrDecApp.exe
+cl /DWIN32 /DDISABLE_PERF_MEASUREMENT /DENABLE_OPTIMIZATIONS /Iimage\sys /Iimage\x86 /Icommon\include /Ijxrgluelib /Ijxrtestlib jxrencoderdecoder\JxrEncApp.c libjpegxr.lib libjxrglue.lib /OUT:JxrEncApp.exe
+cl /DWIN32 /DDISABLE_PERF_MEASUREMENT /DENABLE_OPTIMIZATIONS /Iimage\sys /Iimage\x86 /Icommon\include /Ijxrgluelib /Ijxrtestlib jxrencoderdecoder\JxrDecApp.c libjpegxr.lib libjxrglue.lib /OUT:JxrDecApp.exe
 
 copy libjpegxr.lib "%LIBRARY_LIB%"
 copy libjxrglue.lib "%LIBRARY_LIB%"
